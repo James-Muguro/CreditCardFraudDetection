@@ -1,4 +1,4 @@
 kaggle==1.6.17
 pandas>=2.3.3,<3.0
 python-dotenv==1.0.1
-pandera==0.20.4
+pandera>=0.29,<0.33

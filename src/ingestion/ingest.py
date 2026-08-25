@@ -4,8 +4,10 @@ import logging
 from datetime import datetime, timezone
 from pathlib import Path
 
-import pandas as pd
 from dotenv import load_dotenv
+load_dotenv()  # must run BEFORE importing kaggle — it auto-authenticates on import
+
+import pandas as pd
 from kaggle.api.kaggle_api_extended import KaggleApi
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
@@ -13,7 +15,6 @@ logger = logging.getLogger(__name__)
 
 DATASET = "mlg-ulb/creditcardfraud"
 RAW_DIR = Path("data/raw")
-
 
 def download_dataset(dataset: str, dest_dir: Path) -> Path:
     """Download and unzip a Kaggle dataset into dest_dir."""
@@ -55,7 +56,6 @@ def write_manifest(csv_path: Path, df: pd.DataFrame, dest_dir: Path) -> None:
 
 
 def main():
-    load_dotenv()
     raw_csv = download_dataset(DATASET, RAW_DIR)
     final_csv = stamp_and_move(raw_csv, RAW_DIR)
 

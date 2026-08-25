@@ -6,3 +6,5 @@ __pycache__/
 .venv/
 data/processed/*
 !data/processed/.gitkeep
+data/warehouse/*
+!data/warehouse/.gitkeep

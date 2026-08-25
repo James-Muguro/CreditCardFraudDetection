@@ -4,7 +4,7 @@ import sys
 from pathlib import Path
 
 import pandas as pd
-import pandera as pa
+import pandera.pandas as pa
 
 from src.validation.schema import credit_card_schema
 

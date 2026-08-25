@@ -4,3 +4,5 @@ data/raw/*
 __pycache__/
 *.pyc
 .venv/
+data/processed/*
+!data/processed/.gitkeep

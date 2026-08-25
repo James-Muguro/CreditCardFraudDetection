@@ -1,5 +1,5 @@
-import pandera as pa
-from pandera import Column, Check, DataFrameSchema
+import pandera.pandas as pa
+from pandera.pandas import Column, Check, DataFrameSchema
 
 # The dataset has columns: Time, V1..V28 (PCA components), Amount, Class
 pca_columns = {
